@@ -1,13 +1,27 @@
-### run
-
+## run
 
 ```bash
-python3 -m pip install --user pipenv
 pipenv install
-pipenv run python3
+pipenv run python3 [file.py]
+pipenv shell
 ```
 
-### venv
+## virtual environment
+
+### 1. pipenv
+https://packaging.python.org/en/latest/tutorials/managing-dependencies/#managing-dependencies
+
+1. install pipenv
+```python3
+python3 -m pip install --user pipenv
+python3 -m pip install --user virtualenv
+python3 -m pip install --user virtualenv-clone
+pipenv install {packages}
+```
+
+2. install package for the project
+
+### 2. pyenv
 
 #### install
 
@@ -27,4 +41,11 @@ pip install neovim
 pyenv activate nvim
 pip install neovim
 ```
+
+## Trouble Shoot
+
+pipenv --venv 
+to findout folder the project environment
+
+https://github.com/pypa/pipenv/issues/5052
 
