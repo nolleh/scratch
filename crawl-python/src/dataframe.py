@@ -10,29 +10,32 @@ df = pd.DataFrame(
 print(df.shape)
 
 # show all data
-print('show All')
+print("show All")
 display(df)
 
-print('-------\n')
-print('show A')
+print("-------\n")
+print("show A")
 # show A Col's data
-display(df['A'])
+display(df["A"])
 
-print('-------\n')
-print('show rearrange')
-rearrange = pd.DataFrame(df, columns = ['B','A'])
+print("-------\n")
+print("show rearrange")
+rearrange = pd.DataFrame(df, columns=["B", "A"])
 display(rearrange)
 
 # print('-------\n')
 # print('select a rows')
 # display(df.loc('a'))
-dict = {'Name' : ['Martha', 'Tim', 'Rob', 'Georgia'],
-        'Maths' : [87, 91, 97, 95],
-        'Science' : [83, 99, 84, 76]}
+dict = {
+    "Name": ["Martha", "Tim", "Rob", "Georgia"],
+    "Maths": [87, 91, 97, 95],
+    "Science": [83, 99, 84, 76],
+}
 df = pd.DataFrame(dict)
-  
+
 # displaying the DataFrame
 df.style
+
 
 def color_negative_red(val):
     """
@@ -40,25 +43,25 @@ def color_negative_red(val):
     the css property `'color: red'` for negative
     strings, black otherwise.
     """
-    color = 'blue' if val > 90 else 'black'
-    return 'color: % s' % color
-  
+    color = "blue" if val > 90 else "black"
+    return "color: % s" % color
+
+
 # creating a DataFrame
-dict = {'Maths' : [87, 91, 97, 95],
-        'Science' : [83, 99, 84, 76]}
+dict = {"Maths": [87, 91, 97, 95], "Science": [83, 99, 84, 76]}
 df = pd.DataFrame(dict)
-  
+
 # displaying the DataFrame
 df.style.applymap(color_negative_red)
 
 
-print(tabulate(df, headers = 'keys', tablefmt = 'psql'))
+print(tabulate(df, headers="keys", tablefmt="psql"))
 
-print('*************')
+print("*************")
 ts = pd.Series(np.random.randn(1000), index=pd.date_range("1/1/2000", periods=1000))
 ts = ts.cumsum()
-ts.plot();
+ts.plot()
 
 df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index, columns=list("ABCD"))
 df = df.cumsum()
-df.plot();
+df.plot()
