@@ -9,11 +9,11 @@ TEST THAT MAKES ME CONFUSING MAKING INITAL SCRATCH TS PROJECT
 3. pnpm add -D ts-node
 4. pnpm add -D typescript
 5. pnpm add -D @types/node
-3. package.json
+6. package.json
   - add script (start: ts-node app.ts)
 7. target, module: es2022
-7. tsconfig.json: baseUrl as '.'
-8. tsconfig.json: paths
+8. tsconfig.json: baseUrl as '.'
+9. tsconfig.json: paths
 ```json
     "paths": {
       "test/*": [
@@ -23,6 +23,10 @@ TEST THAT MAKES ME CONFUSING MAKING INITAL SCRATCH TS PROJECT
         "src/*" 
       ]
     }
+```
+10. husky
+```
+pnpm dlx husky-init && pnpm install
 ```
 
 ## TROUBLE SHOOT

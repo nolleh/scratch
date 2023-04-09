@@ -9,9 +9,11 @@ pipenv shell
 ## virtual environment
 
 ### 1. pipenv
+
 https://packaging.python.org/en/latest/tutorials/managing-dependencies/#managing-dependencies
 
 1. install pipenv
+
 ```python3
 python3 -m pip install --user pipenv
 python3 -m pip install --user virtualenv
@@ -44,8 +46,7 @@ pip install neovim
 
 ## Trouble Shoot
 
-pipenv --venv 
+pipenv --venv
 to findout folder the project environment
 
 https://github.com/pypa/pipenv/issues/5052
-
