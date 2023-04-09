@@ -1,7 +1,7 @@
 import { randomInt } from "crypto";
 
 export class Shuffle {
-  static shuffle<T>(array: Array<T>, start: number, length: number){ 
+  static shuffle<T>(array: Array<T>, start: number, length: number) {
     const prior = array.slice(0, start);
     const end = array.slice(length);
     const arr = array.slice(start, length);
@@ -12,6 +12,6 @@ export class Shuffle {
       arr[fst] = arr[snd];
       arr[snd] = tmp;
     }
-    return prior.concat(arr).concat(end)
+    return prior.concat(arr).concat(end);
   }
 }

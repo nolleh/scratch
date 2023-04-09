@@ -1,6 +1,6 @@
 {
   "include": ["src/**/*", "tests/**/*"],
-	"exclude": ["node_modules/*", "coverage/*"],
+  "exclude": ["node_modules/*", "coverage/*"],
   "compilerOptions": {
     "target": "es2022",
     "module": "commonjs",
@@ -9,16 +9,11 @@
     "strict": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "baseUrl":".",
+    "baseUrl": ".",
     "paths": {
-      "test/*": [
-        "test/*"
-      ],
-      "*": [
-        "src/*" 
-      ]
+      "test/*": ["test/*"],
+      "*": ["src/*"]
     }
-
   },
   "ts-node": {
     "esm": true,

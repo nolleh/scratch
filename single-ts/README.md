@@ -2,7 +2,7 @@
 
 TEST THAT MAKES ME CONFUSING MAKING INITAL SCRATCH TS PROJECT
 
-# DESCRIPTION 
+# DESCRIPTION
 
 1. pnpm init
 2. tsc --init
@@ -10,58 +10,66 @@ TEST THAT MAKES ME CONFUSING MAKING INITAL SCRATCH TS PROJECT
 4. pnpm add -D typescript
 5. pnpm add -D @types/node
 6. package.json
-  - add script (start: ts-node app.ts)
+
+- add script (start: ts-node app.ts)
+
 7. target, module: es2022
 8. tsconfig.json: baseUrl as '.'
 9. tsconfig.json: paths
+
 ```json
     "paths": {
       "test/*": [
         "test/*"
       ],
       "*": [
-        "src/*" 
+        "src/*"
       ]
     }
 ```
+
 10. husky
+
 ```
 pnpm dlx husky-init && pnpm install
 ```
 
 ## TROUBLE SHOOT
+
 1. cannot find module './app.ts'
-  - check baseurl
+
+- check baseurl
+
 2. To load ES module, set "type": "module"
-  - add package.json
-  - it enable ESM in for Node
+
+- add package.json
+- it enable ESM in for Node
+
 3. unknown file extension ".ts" for ... app.ts
 4. if you use package.jsons module as commonjs, you cannot import es module.(cannot find module)
-```typescript
 
+```typescript
 export class Shuffle {
   static shuffle<T>(array: Array<T>, start, length) {
     // ....
   }
 }
-import { Shuffle } from 'utils/shuffle';
-
+import { Shuffle } from "utils/shuffle";
 ```
 
 5. if you use package.json's type: module was not set.. compile error for 'Cannot use import statement outside a module'
 
 6. unknown file extension:
-  --esm
-
-
+   --esm
 
 ### WORKING OPTION
+
 1. commonjs and remove type:module
-run with: ts-node -r tsconfig-paths/register src/app.ts
+   run with: ts-node -r tsconfig-paths/register src/app.ts
 
 `package.json`
-```json
 
+```json
 {
   "name": "single-ts",
   "version": "1.0.0",
@@ -89,10 +97,9 @@ run with: ts-node -r tsconfig-paths/register src/app.ts
 `tsconfig.json`
 
 ```json
-
 {
   "include": ["src/**/*", "tests/**/*"],
-	"exclude": ["node_modules/*", "coverage/*"],
+  "exclude": ["node_modules/*", "coverage/*"],
   "compilerOptions": {
     "target": "es2022",
     "module": "commonjs",
@@ -101,16 +108,11 @@ run with: ts-node -r tsconfig-paths/register src/app.ts
     "strict": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "baseUrl":".",
+    "baseUrl": ".",
     "paths": {
-      "test/*": [
-        "test/*"
-      ],
-      "*": [
-        "src/*" 
-      ]
+      "test/*": ["test/*"],
+      "*": ["src/*"]
     }
-
   },
   "ts-node": {
     "esm": true,
@@ -120,12 +122,12 @@ run with: ts-node -r tsconfig-paths/register src/app.ts
 ```
 
 2. es2022 and add type:module and import statement as relative
-and also can you with ts-node src/app.ts
+   and also can you with ts-node src/app.ts
 
 import { Shuffle } from './utils/shuffle';
 import { Logger} from './logger';
 
-``package.json``
+`package.json`
 
 ```json
 {
@@ -156,7 +158,7 @@ import { Logger} from './logger';
 ```json
 {
   "include": ["src/**/*", "tests/**/*"],
-	"exclude": ["node_modules/*", "coverage/*"],
+  "exclude": ["node_modules/*", "coverage/*"],
   "compilerOptions": {
     "target": "es2022",
     "module": "es2022",
@@ -165,16 +167,11 @@ import { Logger} from './logger';
     "strict": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "baseUrl":".",
+    "baseUrl": ".",
     "paths": {
-      "test/*": [
-        "test/*"
-      ],
-      "*": [
-        "src/*" 
-      ]
+      "test/*": ["test/*"],
+      "*": ["src/*"]
     }
-
   },
   "ts-node": {
     "esm": true,
