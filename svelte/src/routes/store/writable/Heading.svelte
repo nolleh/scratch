@@ -1,12 +1,12 @@
 
 <script lang='ts'>
   import { onMount } from 'svelte';
-  import { value, subscribe } from '../../libs/store';
+  import { valueStore } from '../../../libs/store2';
   let _value = '';
   onMount(() => {
-    return subscribe(() => {
+    return valueStore.subscribe(value => {
       _value = value;
-    });
+    })
   });
 </script>
 

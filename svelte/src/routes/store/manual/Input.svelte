@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { update } from '../../libs/store';
+  import { update } from '../../../libs/store';
 </script>
 
 <input
