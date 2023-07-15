@@ -5,4 +5,7 @@ variable "GITHUB_SHA" {
 target "api" {
     dockerfile = "./apps/api/Dockerfile"
     context = "./"
+    tags = [
+      "api"
+    ]
 }

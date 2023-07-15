@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # from workspace root
-DOCKER_BUILDKIT=1 GITHUB_SHA=$GITHUB_SHA docker buildx bake -f docker-bake.hcl api
+# DOCKER_BUILDKIT=1 GITHUB_SHA=$GITHUB_SHA docker buildx bake -f docker-bake.hcl api
 
 # or to debug with output
-# DOCKER_BUILDKIT=1 GITHUB_SHA=$GITHUB_SHA docker buildx bake --progress=plain --no-cache -f docker-bake.hcl api
+DOCKER_BUILDKIT=1 GITHUB_SHA=$GITHUB_SHA docker buildx bake --progress=plain --no-cache -f docker-bake.hcl api
