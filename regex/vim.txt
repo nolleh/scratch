@@ -1,0 +1,8 @@
+/\vsea(side)@!
+
+^(\d+),.+,(\d{4}),(\d{4})?,.+,(Virginia|Massachusetts)@!.+,https.+
+
+^(\d+),[A-Za-z .]{-1,}\s[A-Za-z\s]+,
+
+
+^(\d+),([^.]+,)@=[A-Za-z. ]{-1,}\s[A-Za-z ]{8,},\d{4},\d{4},.*,https.+
