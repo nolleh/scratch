@@ -2,7 +2,6 @@ package web
 
 import (
 	"context"
-	"go-for-devs/context2/db"
 )
 
 type CtxKey string

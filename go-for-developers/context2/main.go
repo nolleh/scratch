@@ -4,14 +4,15 @@ import (
 	"context"
 	"fmt"
 	"go-for-devs/context2/db"
+	"go-for-devs/context2/web"
 	"log"
 )
 
 
 func main() {
   ctx := context.Background()
-  ctx = db.WithRequestId(ctx)
-  ctx = web.WithRequestId(ctx)
+  ctx = db.WithRequestID(ctx)
+  ctx = web.WithRequestID(ctx)
   id, err := db.RequestIdFrom(ctx)
 
   if err != nil {

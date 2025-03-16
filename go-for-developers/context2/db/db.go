@@ -21,7 +21,7 @@ func RequestIdFrom(ctx context.Context) (string, error) {
   return s, nil
 }
 
-func WithRequestId(ctx context.Context) context.Context {
+func WithRequestID(ctx context.Context) context.Context {
   ctx = context.WithValue(ctx, requestID, "123")
   return ctx
 }
